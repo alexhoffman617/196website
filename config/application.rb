@@ -60,5 +60,11 @@ module Journal
     config.assets.version = '1.0'
     
     config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+   config.generators do |g|
+      g.controller_specs false
+      g.view_specs false
+      g.helper_specs false
+    end
   end
 end
