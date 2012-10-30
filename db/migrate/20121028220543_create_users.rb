@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.text :bio
-      t.string :email
+      t.string :email, :unique =>true
 
       t.timestamps
     end
