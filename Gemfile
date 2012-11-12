@@ -41,6 +41,9 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin'
 gem 'make_voteable'
+
+gem 'newrelic_rpm'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

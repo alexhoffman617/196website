@@ -99,6 +99,7 @@ GEM
     multi_json (1.3.6)
     nested_form (0.2.3)
     netrc (0.7.7)
+    newrelic_rpm (3.5.0.1)
     nokogiri (1.5.5)
     orm_adapter (0.4.0)
     pg (0.14.1)
@@ -201,6 +202,7 @@ DEPENDENCIES
   heroku (~> 2.31.2)
   jquery-rails
   make_voteable
+  newrelic_rpm
   pg
   rails (= 3.2.8)
   rails_admin
