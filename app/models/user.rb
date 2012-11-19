@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :bio, :email, :name
   has_many :posts
   validates :email, :presence => true
+  validates :email, :uniqueness => true
   validates :name, :presence => true
   validates :name, :uniqueness => true
 

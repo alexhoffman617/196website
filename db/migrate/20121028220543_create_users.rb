@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :bio
       t.string :email, :unique =>true
       t.boolean :admin, :default =>true
+      t.boolean :promoted. :default => true
 
       t.timestamps
     end

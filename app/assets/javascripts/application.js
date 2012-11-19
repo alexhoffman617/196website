@@ -13,3 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+   $('#adminInfo').click(function(){
+     $('div.toggleA,aitext').fadeToggle();
+   });
+   $('#adminInfo').trigger('click');
+});
+
+$(document).ready(function() {
+   $('#euInfo').click(function(){
+     $('div.toggleE,eytext').fadeToggle();
+   });
+   $('#euInfo').trigger('click');
+});
+
+$(document).ready(function() {
+   $('#guInfo').click(function(){
+     $('div.toggleG,gutext').fadeToggle();
+   });
+   $('#guInfo').trigger('click');
+});
