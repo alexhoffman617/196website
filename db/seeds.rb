@@ -9,6 +9,6 @@ User.create name: 'Mr. Admin',
             email: 'admin@test.com',
             bio: 'Admin',
 		#test1234
-            encrypted_password: '$2a$10$YkbHqams6s07ZE78jRoDIulaiHGOqcgjppxFmSbrCHCB9xRgvAKc6'
+            password: 'foobar',
+           
             admin: 't'
-	    promoted: 'f'
