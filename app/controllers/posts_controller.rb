@@ -8,12 +8,20 @@ class PostsController < ApplicationController
         @users = User.all
   end
   
+  
+  
   def posts
     current_user.posts
   end
   
+  
+
+  
+  
   def index
-    @posts = posts
+    @posts = Post.paginate(:per_page => 5, :page => params[:page] ).order('likes DESC')
+
+    
     
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +53,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -67,8 +75,10 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = posts.find(params[:id])
-
+    @post = Post.find(params[:id])
+    @post.likes +=1
+   
+    
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -83,7 +93,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = posts.find(params[:id])
+    @post =  Post.find(params[:id])
     @post.destroy
 
     respond_to do |format|

@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+post:
+  title: Post Title
+  post: Post Text
+  user_id: 55
+  likes: 0
+  

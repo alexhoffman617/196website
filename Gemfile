@@ -43,6 +43,8 @@ gem 'rails_admin'
 gem 'make_voteable'
 
 gem 'newrelic_rpm'
+gem  'will_paginate-bootstrap'
+gem 'will_paginate'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

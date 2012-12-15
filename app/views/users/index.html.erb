@@ -5,6 +5,8 @@
     <th>Name</th>
     <th>Bio</th>
     <th>Email</th>
+    <th>Promoted</th>
+    <th>Admin</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,13 +17,17 @@
     <td><%= user.name %></td>
     <td><%= user.bio %></td>
     <td><%= user.email %></td>
+    <td><%= user.promoted %></td>
+    <td><%= user.admin %></td>
     <td><%= link_to 'Show', user %></td>
+    <td><% if current_user != nil and current_user.admin == true or current_user==user%></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', user, method: :destroy, data: { confirm: 'Are you sure?' } %></td>
+    <td><%end%></td>
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @users, :renderer => BootstrapPagination::Rails %>
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', "users/sign_up" %>

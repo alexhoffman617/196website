@@ -8,6 +8,8 @@ Journal::Application.routes.draw do
 
   
 
+  resources :votes
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
@@ -22,7 +24,10 @@ Journal::Application.routes.draw do
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  match 'admnIndex' => 'posts#admnIndex'
+  match 'promotedIndex' => 'posts#promotedIndex'
+  match 'regularIndex' => 'posts#regularIndex'
+  match 'index3' => 'pages#index2'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
@@ -74,6 +79,6 @@ Journal::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-  
   root :to => 'pages#index'
+  
 end

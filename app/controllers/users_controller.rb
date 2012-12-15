@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(:per_page => 5, :page => params[:page] )
 
     respond_to do |format|
       format.html # index.html.erb
@@ -57,6 +57,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    @user.vvotes -=1
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

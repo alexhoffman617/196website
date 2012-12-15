@@ -18,6 +18,18 @@
 </p>
 
 
+<p>
+  <b>Link:</b>
+  
+  <a href="<%=@post.link%>" target="_blank"><%=  @post.link %> </a>
+</p>
+
+<p>
+  <b>Likes</b>
+  <%= link_to @post.likes, @post, method: :like %>
+  
+</p>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 

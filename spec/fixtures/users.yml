@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+alex:
+  name: Alex
+  email: alex@test.com
+  #test1234
+  encrypted_password: $2a$10$YkbHqams6s07ZE78jRoDIulaiHGOqcgjppxFmSbrCHCB9xRgvAKc6
+  bio: Test
+  admin: t
+  promoted: f
+  
+bob:
+  name: Bob
+  email: bob@test.com
+  #test1234
+  encrypted_password: $2a$10$YkbHqams6s07ZE78jRoDIulaiHGOqcgjppxFmSbrCHCB9xRgvAKc6
+  bio: Test2
+  admin: f
+  promoted: t

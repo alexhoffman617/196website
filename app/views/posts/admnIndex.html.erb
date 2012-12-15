@@ -1,4 +1,4 @@
-<h1>All posts</h1>
+<h1>Listing posts</h1>
 
 <table>
   <tr>
@@ -10,16 +10,17 @@
     <th></th>
     <th></th>
   </tr>
-
-<td></td><% @posts.each do |post| %><td>
-
+  
+<td><%@posts = Post.paginate(:per_page => 5, :page => params[:page] ).order('likes DESC')%></td>
+<td><% @posts.each do |post| %></td>
+<td<% if post.user.admin==true %></td>
   <tr>
-  	<td><%= post.user.name %></td>
+  	<td><%= post.user.name%></td>
     <td><%= post.title %></td>
     <td><%= post.post %></td>
     
     <td><%if post.link == "No Link" or post.link == nil%>
-		No Link
+    	<% "No Link"%>
     	<%else%>
     	 <a href="<%=post.link%>" target="_blank"><%=  post.link %> </a>
     		<%end%>
@@ -29,21 +30,22 @@
   
     <td><%= link_to 'Show', post %></td>
     
-      <td><% if current_user.admin == true or current_user == post.user%></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy',post, method: :delete,  data: { confirm: 'Are you sure?' } %></td>
-    <td><%end%></td>
-   
-    <td class= "btn-small"><%= button_to 'Like', post, method: :put %></td>
- 
   
-     
-  </tr>
- <%end%>
+     <td><% if current_user.admin == true or current_user == post.user%></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
 
+      <td></td>
+    <td><%= link_to 'Destroy',post, method: :delete,  data: { confirm: 'Are you sure?' } %></td>
+     <td><%end%></td>
+    <td class= "btn-small"><%= button_to 'Like', post, method: :put %></td>
+    
+  </tr>
+<%end%>
+<% end %>
 </table>
 <%= will_paginate @posts, :renderer => BootstrapPagination::Rails %>
 
+
 <br />
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', "users/sign_up" %>
