@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    @user.vvotes -=1
+   
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
